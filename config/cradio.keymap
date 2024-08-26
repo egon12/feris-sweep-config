@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: MIT
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 / {
     behaviors {
@@ -15,11 +15,12 @@
             quick-tap-ms = <150>;
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
-        }; 
+        };
     };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
+
         tri_layer {
             if-layers = <1 2>;
             then-layer = <3>;
@@ -28,61 +29,59 @@
 
     keymap {
         compatible = "zmk,keymap";
+
         default_layer {
             bindings = <
-            &kp Q       &kp W      &kp E       &kp R       &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
-            &kp A       &kp S      &kp D       &kp F       &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
-            &ht LSHFT Z &ht LALT X &ht LCTRL C &ht LGUI V  &kp B          &kp N      &ht RGUI M &ht RCTRL COMMA  &ht RALT DOT  &kp RSHFT FSLH
-                                            &lt 4 TAB  &lt 2 ENTER   &lt 1 SPACE  &lt 5 BSPC
+  &kp Q        &kp W       &kp E        &kp R       &kp T          &kp Y        &kp U       &kp I            &kp O         &kp P
+  &kp A        &kp S       &kp D        &kp F       &kp G          &kp H        &kp J       &kp K            &kp L         &kp SQT
+  &ht LSHFT Z  &ht LALT X  &ht LCTRL C  &ht LGUI V  &kp B          &kp N        &ht RGUI M  &ht RCTRL COMMA  &ht RALT DOT  &kp RSHFT FSLH
+                                        &lt 4 TAB   &lt 2 ENTER    &lt 1 SPACE  &lt 5 BSPC
             >;
         };
 
         space_layer {
             bindings = <
-            &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &kp CARET  &kp AMPS   &kp ASTRK  &trans     &kp BSPC
-            &kp ESC    &kp N4     &kp N5     &kp N6     &trans         &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT   &kp COLON
-            &caps_word &kp N7     &kp N8     &kp N9     &kp N0         &kp UNDER  &kp PLUS   &trans     &trans     &kp SEMI
-                                             &trans      &trans        &trans     &trans
+  &kp EXCL    &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &trans    &kp BSPC
+  &kp ESC     &kp N4  &kp N5    &kp N6    &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp COLON
+  &caps_word  &kp N7  &kp N8    &kp N9    &kp N0       &kp UNDER  &kp PLUS   &trans     &trans    &kp SEMI
+                                &trans    &trans       &trans     &trans
             >;
         };
 
         enter_layer {
             bindings = <
-            &kp N1     &kp N2     &kp N3     &kp N4    &kp N5    &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
-            &kp LPAR   &kp RPAR   &kp LBRC   &kp RBRC  &trans    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT   &kp COLON
-            &kp TILDE  &kp BSLH   &trans     &trans    &trans    &kp UNDER  &kp PLUS   &trans     &trans     &kp SEMI
-                                             &trans    &trans    &trans     &trans
+  &trans   &kp N1  &kp N2  &kp N3  &trans    &kp N6     &kp N7     &kp N8    &kp N9    &kp N0
+  &kp ESC  &kp N4  &kp N5  &kp N6  &trans    &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp COLON
+  &trans   &kp N7  &kp N8  &kp N9  &kp N0    &kp UNDER  &kp PLUS   &trans    &trans    &kp SEMI
+                           &trans  &trans    &trans     &trans
             >;
-
         };
 
         tri_layer {
             bindings = <
-           &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
-          &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
-            &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
-                                             &trans     &trans         &trans     &trans
+  &sys_reset   &trans  &trans  &trans      &bt BT_SEL 0    &trans  &trans  &trans  &trans  &sys_reset
+  &bootloader  &trans  &trans  &trans      &bt BT_SEL 1    &trans  &trans  &trans  &trans  &bootloader
+  &trans       &trans  &trans  &bt BT_CLR  &bt BT_SEL 2    &trans  &trans  &trans  &trans  &trans
+                               &trans      &trans          &trans  &trans
             >;
         };
 
         tab_layer {
             bindings = <
-            &trans     &kp LBKT   &kp LBRC   &kp RBRC   &trans         &kp CARET  &kp LPAR   &kp RPAR   &kp RBKT   &kp TILDE
-            &kp LPAR   &kp RPAR   &kp LBRC   &kp RBRC   &trans         &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT   &kp COLON
-            &trans     &trans     &trans     &trans     &trans         &kp AMPS   &kp UNDER  &kp PLUS   &kp PIPE   &trans
-                                             &trans     &trans         &trans     &trans
+  &trans     &trans    &trans    &trans    &trans    &kp CARET  &kp LPAR   &kp RPAR  &kp RBKT  &kp TILDE
+  &kp LPAR   &kp RPAR  &kp LBRC  &kp RBRC  &trans    &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp COLON
+  &kp TILDE  &kp BSLH  &trans    &trans    &trans    &kp AMPS   &kp UNDER  &kp PLUS  &kp PIPE  &trans
+                                 &trans    &trans    &trans     &trans
             >;
         };
 
         backspace_layer {
             bindings = <
-           &sys_reset  &trans     &trans     &trans    &trans    &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &sys_reset
-            &trans     &trans     &trans     &trans    &trans    &kp LARW   &kp DARW   &kp UARW   &kp RARW   &trans
-            &trans     &trans     &trans     &trans    &trans    &trans     &trans     &trans     &trans     &trans
-                                             &trans    &trans    &trans     &trans
+  &sys_reset  &trans  &trans  &trans  &trans    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END   &sys_reset
+  &trans      &trans  &trans  &trans  &trans    &kp LARW  &kp DARW   &kp UARW   &kp RARW  &trans
+  &trans      &trans  &trans  &trans  &trans    &trans    &trans     &trans     &trans    &trans
+                              &trans  &trans    &trans    &trans
             >;
         };
-
-
     };
 };
