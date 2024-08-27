@@ -32,13 +32,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press>,
-                <&kp LGUI>,
-                <&macro_tap>,
-                <&kp TAB>,
+                <&macro_press &kp LGUI>,
+                <&macro_tap &kp TAB>,
                 <&macro_wait_time 500>,
-                <&macro_release>,
-                <&kp LGUI>;
+                <&macro_release &kp TAB>;
 
             label = "MTAB";
         };
@@ -76,9 +73,9 @@
 
         space_layer {
             bindings = <
-  &trans      &trans  &kp LS(LC(TAB))  &kp LC(TAB)  &trans    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END   &sys_reset
-  &trans      &trans  &mstab           &mtab        &trans    &kp LARW  &kp DARW   &kp UARW   &kp RARW  &trans
-  &trans      &trans  &kp LS(LA(TAB))  &kp LA(TAB)  &trans    &trans    &trans     &trans     &trans    &trans
+  &trans      &trans  &kp LS(LC(TAB))  &kp LC(TAB)  &trans    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END   &kp BSPC
+  &trans      &trans  &mstab           &mtab        &trans    &kp LARW  &kp DARW   &kp UARW   &kp RARW  &kp COLON
+  &caps_word  &trans  &kp LS(LA(TAB))  &kp LA(TAB)  &trans    &trans    &trans     &trans     &trans    &kp SEMI
                                        &trans       &trans    &trans    &trans
             >;
         };
