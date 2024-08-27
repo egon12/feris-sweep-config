@@ -32,13 +32,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press>,
-                <&kp LGUI>,
-                <&macro_tap>,
-                <&kp TAB>,
-                <&macro_wait_time 50>,
-                <&macro_release>,
-                <&kp LGUI>;
+                <&macro_press &kp LGUI>,
+                <&macro_tap &kp TAB>,
+                <&macro_wait_time 500>,
+                <&macro_release &kp LGUI>,
 
             label = "MTAB";
         };
