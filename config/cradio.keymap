@@ -17,6 +17,15 @@
             require-prior-idle-ms = <80>;
             bindings = <&kp>, <&kp>;
         };
+
+        tdcolon: tdcolon {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDCOLON";
+            #binding-cells = <0>;
+            bindings = <&kp SQT>, <&kp COLON>;
+
+            tapping-term-ms = <200>;
+        };
     };
 
     conditional_layers {
@@ -34,7 +43,7 @@
         default_layer {
             bindings = <
   &kp Q        &kp W  &kp E        &kp R         &kp T          &kp Y        &kp U       &kp I            &kp O         &kp P
-  &kp A        &kp S  &kp D        &kp F         &kp G          &kp H        &kp J       &kp K            &kp L         &kp SQT
+  &kp A        &kp S  &kp D        &kp F         &kp G          &kp H        &kp J       &kp K            &kp L         &tdcolon
   &ht LSHFT Z  &kp X  &ht LCTRL C  &ht LALT V    &ht GLOBE B    &kp N        &ht RGUI M  &ht RCTRL COMMA  &ht RALT DOT  &ht RSHFT FSLH
                                    &mt LGUI ESC  &lt 2 ENTER    &lt 1 SPACE  &lt 4 BSPC
             >;
