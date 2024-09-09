@@ -33,6 +33,13 @@
             #binding-cells = <0>;
             bindings = <&kp A>, <&kp TAB>;
         };
+
+        tdshfshf: tdshfshf {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDSHFSHF";
+            #binding-cells = <0>;
+            bindings = <&ht LSHFT Z>, <&shfshf>;
+        };
     };
 
     conditional_layers {
@@ -48,8 +55,7 @@
         shfshf: shfshf {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LSHIFT>, <&macro_press>;
-
+            bindings = <&kp LSHIFT &kp LEFT_SHIFT>;
             label = "SHFSHF";
         };
     };
@@ -59,10 +65,10 @@
 
         default_layer {
             bindings = <
-  &kp Q        &kp W  &kp E  &kp R         &kp T          &kp Y        &kp U       &tdcolon         &kp O         &kp P
-  &tdtab       &kp S  &kp D  &kp F         &kp G          &kp H        &kp J       &kp K            &kp L         &kp SQT
-  &ht LSHFT Z  &kp X  &kp C  &ht LCTRL V   &ht LALT B     &ht GLOBE N  &ht RGUI M  &ht RCTRL COMMA  &ht RALT DOT  &ht RSHFT FSLH
-                             &mt LGUI ESC  &lt 2 ENTER    &lt 1 SPACE  &lt 4 BSPC
+  &kp Q      &kp W  &kp E  &kp R         &kp T          &kp Y        &kp U       &tdcolon         &kp O         &kp P
+  &tdtab     &kp S  &kp D  &kp F         &kp G          &kp H        &kp J       &kp K            &kp L         &kp SQT
+  &tdshfshf  &kp X  &kp C  &ht LCTRL V   &ht LALT B     &ht GLOBE N  &ht RGUI M  &ht RCTRL COMMA  &ht RALT DOT  &ht RSHFT FSLH
+                           &mt LGUI ESC  &lt 2 ENTER    &lt 1 SPACE  &lt 4 BSPC
             >;
         };
 
