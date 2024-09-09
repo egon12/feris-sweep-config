@@ -22,9 +22,16 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TDCOLON";
             #binding-cells = <0>;
-            bindings = <&kp SQT>, <&kp COLON>;
+            bindings = <&kp I>, <&kp COLON>;
 
             tapping-term-ms = <200>;
+        };
+
+        tdtab: tdtab {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDTAB";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&kp TAB>;
         };
     };
 
@@ -37,15 +44,25 @@
         };
     };
 
+    macros {
+        shfshf: shfshf {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LSHIFT>, <&macro_press>;
+
+            label = "SHFSHF";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-  &kp Q        &kp W  &kp E        &kp R         &kp T          &kp Y        &kp U       &kp I            &kp O         &kp P
-  &kp A        &kp S  &kp D        &kp F         &kp G          &kp H        &kp J       &kp K            &kp L         &tdcolon
-  &ht LSHFT Z  &kp X  &ht LCTRL C  &ht LALT V    &ht GLOBE B    &kp N        &ht RGUI M  &ht RCTRL COMMA  &ht RALT DOT  &ht RSHFT FSLH
-                                   &mt LGUI ESC  &lt 2 ENTER    &lt 1 SPACE  &lt 4 BSPC
+  &kp Q        &kp W  &kp E  &kp R         &kp T          &kp Y        &kp U       &tdcolon         &kp O         &kp P
+  &tdtab       &kp S  &kp D  &kp F         &kp G          &kp H        &kp J       &kp K            &kp L         &kp SQT
+  &ht LSHFT Z  &kp X  &kp C  &ht LCTRL V   &ht LALT B     &ht GLOBE N  &ht RGUI M  &ht RCTRL COMMA  &ht RALT DOT  &ht RSHFT FSLH
+                             &mt LGUI ESC  &lt 2 ENTER    &lt 1 SPACE  &lt 4 BSPC
             >;
         };
 
