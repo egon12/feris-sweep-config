@@ -11,8 +11,8 @@
         ht: hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <150>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <220>;
             quick-tap-ms = <150>;
             require-prior-idle-ms = <80>;
             bindings = <&kp>, <&kp>;
@@ -67,7 +67,7 @@
             bindings = <
   &kp Q      &kp W  &kp E  &kp R         &kp T          &kp Y        &kp U       &tdcolon         &kp O         &kp P
   &tdtab     &kp S  &kp D  &kp F         &kp G          &kp H        &kp J       &kp K            &kp L         &kp SQT
-  &tdshfshf  &kp X  &kp C  &ht LCTRL V   &ht LALT B     &ht GLOBE N  &ht RGUI M  &ht RCTRL COMMA  &ht RALT DOT  &ht RSHFT FSLH
+  &tdshfshf  &kp X  &kp C  &ht LALT V    &ht LCTRL B    &ht GLOBE N  &ht RGUI M  &ht RCTRL COMMA  &ht RALT DOT  &ht RSHFT FSLH
                            &mt LGUI ESC  &lt 2 ENTER    &lt 1 SPACE  &lt 4 BSPC
             >;
         };
