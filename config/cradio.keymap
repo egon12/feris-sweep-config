@@ -75,7 +75,7 @@
         space_layer {
             bindings = <
   &kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &trans     &kp BSPC
-  &kp LPAR   &kp RPAR  &kp LBRC  &kp RBRC  &kp TAB      &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT   &kp COLON
+  &kp LPAR   &kp RPAR  &kp LBRC  &kp RBRC  &kp TAB      &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT   &kp DQT
   &kp TILDE  &kp BSLH  &kp PIPE  &trans    &trans       &kp UNDER  &kp PLUS   &trans     &kp GRAVE  &kp SEMI
                                  &trans    &trans       &trans     &trans
             >;
