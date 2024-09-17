@@ -31,7 +31,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TDTAB";
             #binding-cells = <0>;
-            bindings = <&kp A>, <&kp TAB>;
+            bindings = <&kp T>, <&kp TAB>;
         };
 
         tdshfshf: tdshfshf {
@@ -39,6 +39,13 @@
             label = "TDSHFSHF";
             #binding-cells = <0>;
             bindings = <&ht LSHFT Z>, <&shfshf>;
+        };
+
+        tdctrctr: tdctrctr {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDCTRCTR";
+            #binding-cells = <0>;
+            bindings = <&ht LCTRL B>, <&ctrctr>;
         };
     };
 
@@ -58,6 +65,13 @@
             bindings = <&kp LSHIFT &kp LEFT_SHIFT>;
             label = "SHFSHF";
         };
+
+        ctrctr: ctrctr {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &kp LCTRL>;
+            label = "CTRCTR";
+        };
     };
 
     keymap {
@@ -65,9 +79,9 @@
 
         default_layer {
             bindings = <
-  &kp Q      &kp W  &kp E  &kp R         &kp T          &kp Y        &kp U       &tdcolon         &kp O         &kp P
-  &tdtab     &kp S  &kp D  &kp F         &kp G          &kp H        &kp J       &kp K            &kp L         &kp SQT
-  &tdshfshf  &kp X  &kp C  &ht LALT V    &ht LCTRL B    &ht GLOBE N  &ht RGUI M  &ht RCTRL COMMA  &ht RALT DOT  &ht RSHFT FSLH
+  &kp Q      &kp W  &kp E  &kp R         &tdtab         &kp Y        &kp U       &tdcolon         &kp O         &kp P
+  &kp A      &kp S  &kp D  &kp F         &kp G          &kp H        &kp J       &kp K            &kp L         &kp SQT
+  &tdshfshf  &kp X  &kp C  &ht LALT V    &tdctrctr      &ht GLOBE N  &ht RGUI M  &ht RCTRL COMMA  &ht RALT DOT  &ht RSHFT FSLH
                            &mt LGUI ESC  &lt 2 ENTER    &lt 1 SPACE  &lt 4 BSPC
             >;
         };
@@ -83,10 +97,10 @@
 
         enter_layer {
             bindings = <
-  &trans       &kp N1  &kp N2  &kp N3  &sl 2      &trans  &kp F1  &kp F2  &kp F3  &kp N0
-  &caps_word   &kp N4  &kp N5  &kp N6  &kp TAB    &trans  &kp F4  &kp F5  &kp F6  &kp COLON
-  &key_repeat  &kp N7  &kp N8  &kp N9  &kp N0     &trans  &kp F7  &kp F8  &kp F9  &kp SEMI
-                               &trans  &trans     &trans  &trans
+  &trans       &kp N1  &kp N2  &kp N3  &kp COMMA    &trans  &kp F1  &kp F2  &kp F3  &kp N0
+  &caps_word   &kp N4  &kp N5  &kp N6  &kp DOT      &trans  &kp F4  &kp F5  &kp F6  &kp COLON
+  &key_repeat  &kp N7  &kp N8  &kp N9  &kp N0       &trans  &kp F7  &kp F8  &kp F9  &kp SEMI
+                               &trans  &trans       &trans  &trans
             >;
         };
 
