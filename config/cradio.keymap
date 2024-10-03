@@ -4,7 +4,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/keys.h>
 
 / {
     behaviors {
@@ -27,13 +26,6 @@
             tapping-term-ms = <200>;
         };
 
-        tdtab: tdtab {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TDTAB";
-            #binding-cells = <0>;
-            bindings = <&kp T>, <&kp TAB>;
-        };
-
         tdshfshf: tdshfshf {
             compatible = "zmk,behavior-tap-dance";
             label = "TDSHFSHF";
@@ -54,7 +46,7 @@
 
         tri_layer {
             if-layers = <1 2>;
-            then-layer = <5>;
+            then-layer = <4>;
         };
     };
 
@@ -74,15 +66,24 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        layer2 {
+            bindings = <&mo 2>;
+            key-positions = <30 31>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-  &kp Q      &kp W  &kp E  &kp R          &kp T          &kp Y        &kp U       &tdcolon         &kp O         &kp P
-  &kp A      &kp S  &kp D  &kp F          &kp G          &kp H        &kp J       &kp K            &kp L         &kp SQT
-  &tdshfshf  &kp X  &kp C  &ht LALT V     &kp B          &ht GLOBE N  &ht RGUI M  &ht RCTRL COMMA  &ht RALT DOT  &ht RSHFT FSLH
-                           &mt LCTRL ESC  &lt 2 ENTER    &lt 1 SPACE  &lt 4 BSPC
+  &kp Q      &kp W  &kp E  &kp R          &kp T             &kp Y        &kp U       &tdcolon         &kp O         &kp P
+  &kp A      &kp S  &kp D  &kp F          &kp G             &kp H        &kp J       &kp K            &kp L         &kp SQT
+  &tdshfshf  &kp X  &kp C  &ht LALT V     &kp B             &ht GLOBE N  &ht RGUI M  &ht RCTRL COMMA  &ht RALT DOT  &ht RSHFT FSLH
+                           &mt LCTRL ESC  &mt LGUI ENTER    &lt 1 SPACE  &lt 3 BSPC
             >;
         };
 
@@ -104,21 +105,12 @@
             >;
         };
 
-        esc_layer {
-            bindings = <
-  &trans      &trans    &trans     &trans    &trans     &trans  &trans  &trans  &trans  &trans
-  &kp LPAR    &kp RPAR  &kp LBRC   &kp RBRC  &kp TAB    &trans  &trans  &trans  &trans  &trans
-  &sk LSHIFT  &kt LALT  &kt LCTRL  &kt LGUI  &trans     &trans  &trans  &trans  &trans  &trans
-                                   &trans    &trans     &trans  &trans
-            >;
-        };
-
         backspace_layer {
             bindings = <
-  &to 0   &to 1   &to 2   &to 3   &to 4     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &kp BSPC
-  &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp COLON
-  &trans  &trans  &trans  &trans  &trans    &trans    &trans     &trans     &trans     &kp SEMI
-                          &trans  &trans    &trans    &trans
+  &trans  &kp N1  &kp N2  &kp N3  &trans     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &kp BSPC
+  &trans  &kp N4  &kp N5  &kp N6  &kp DOT    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp COLON
+  &trans  &kp N7  &kp N8  &kp N9  &kp N0     &trans    &trans     &trans     &trans     &kp SEMI
+                          &trans  &trans     &trans    &trans
             >;
         };
 
