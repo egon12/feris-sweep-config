@@ -37,7 +37,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TDCTRCTR";
             #binding-cells = <0>;
-            bindings = <&ht LCTRL B>, <&ctrctr>;
+            bindings = <&kp E>, <&ctrctr>;
         };
     };
 
@@ -80,19 +80,19 @@
 
         default_layer {
             bindings = <
-  &kp Q      &kp W  &kp E  &kp R          &kp T             &kp Y        &kp U       &tdcolon             &kp O                  &kp P
-  &kp A      &kp S  &kp D  &kp F          &kp G             &kp H        &kp J       &kp K                &kp L                  &kp SQT
-  &tdshfshf  &kp X  &kp C  &ht LALT V     &kp B             &ht GLOBE N  &ht RGUI M  &ht RIGHT_ALT COMMA  &ht RIGHT_CONTROL DOT  &ht RSHFT FSLH
-                           &mt LCTRL ESC  &mt LGUI ENTER    &lt 2 SPACE  &lt 3 BSPC
+  &kp Q      &kp W  &tdctrctr  &kp R          &kp T             &kp Y        &kp U       &tdcolon             &kp O                  &kp P
+  &kp A      &kp S  &kp D      &kp F          &kp G             &kp H        &kp J       &kp K                &kp L                  &kp SQT
+  &tdshfshf  &kp X  &kp C      &ht LALT V     &kp B             &ht GLOBE N  &ht RGUI M  &ht RIGHT_ALT COMMA  &ht RIGHT_CONTROL DOT  &ht RSHFT FSLH
+                               &mt LCTRL ESC  &mt LGUI ENTER    &lt 2 SPACE  &lt 3 BSPC
             >;
         };
 
         ctrl_cmd_layer {
             bindings = <
-  &trans  &kp F1  &kp F2  &kp F3  &kp F10    &trans  &trans  &trans  &trans  &trans
-  &trans  &kp F4  &kp F5  &kp F6  &kp F11    &trans  &trans  &trans  &trans  &trans
-  &trans  &kp F7  &kp F8  &kp F9  &kp F12    &trans  &trans  &trans  &trans  &trans
-                          &trans  &trans     &trans  &trans
+  &trans    &kp F1  &kp F2  &kp F3  &kp F10    &trans  &kp F13  &kp F14  &kp F15  &trans
+  &kp CLCK  &kp F4  &kp F5  &kp F6  &kp F11    &trans  &kp F16  &kp F17  &kp F18  &trans
+  &trans    &kp F7  &kp F8  &kp F9  &kp F12    &trans  &kp F19  &kp F20  &kp F21  &trans
+                            &trans  &trans     &trans  &trans
             >;
         };
 
