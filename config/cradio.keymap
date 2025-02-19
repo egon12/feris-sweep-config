@@ -26,18 +26,11 @@
             tapping-term-ms = <200>;
         };
 
-        tdshfshf: tdshfshf {
+        tdzshfshf: tdzshfshf {
             compatible = "zmk,behavior-tap-dance";
-            label = "TDSHFSHF";
+            label = "TDZSHFSHF";
             #binding-cells = <0>;
-            bindings = <&ht LSHFT Z>, <&shfshf>;
-        };
-
-        tdctrctr: tdctrctr {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TDCTRCTR";
-            #binding-cells = <0>;
-            bindings = <&ht LEFT_ALT V>, <&ctrctr>;
+            bindings = <&kp Z>, <&shfshf>;
         };
     };
 
@@ -90,10 +83,10 @@
 
         default_layer {
             bindings = <
-  &kp Q      &kp W  &kp E  &kp R          &kp T             &kp Y        &kp U       &tdcolon             &kp O                  &kp P
-  &kp A      &kp S  &kp D  &kp F          &kp G             &kp H        &kp J       &kp K                &kp L                  &kp SQT
-  &tdshfshf  &kp X  &kp C  &tdctrctr      &kp B             &ht GLOBE N  &ht RGUI M  &ht RIGHT_ALT COMMA  &ht RIGHT_CONTROL DOT  &ht RSHFT FSLH
-                           &mt LCTRL ESC  &mt LGUI ENTER    &lt 2 SPACE  &lt 3 BSPC
+  &kp Q         &kp W  &kp E  &kp R          &kp T             &kp Y        &kp U       &tdcolon             &kp O                  &kp P
+  &ht LSHIFT A  &kp S  &kp D  &kp F          &kp G             &kp H        &kp J       &kp K                &kp L                  &ht RSHIFT SQT
+  &tdzshfshf    &kp X  &kp C  &ht LALT V     &kp B             &ht GLOBE N  &ht RGUI M  &ht RIGHT_ALT COMMA  &ht RIGHT_CONTROL DOT  &kp SLASH
+                              &mt LCTRL ESC  &mt LGUI ENTER    &lt 2 SPACE  &lt 3 BSPC
             >;
         };
 
