@@ -1,0 +1,3 @@
+&radio {
+	tx-power = <8>;
+}
