@@ -7,9 +7,10 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      # Pinned to the commit used by the last known-good CI build
-      # (2026-09-21, nice_nano@2.0.0). Bump deliberately, not automatically.
-      revision: 9ebbeff0a8b69a42f14aec022cdf16c7a107b9e0
+      # Pinned to the ZMK `main` commit used by the last verified-working
+      # CI build (2026-01-10, "change POWER into PWR", board: nice_nano).
+      # Bump deliberately (and re-test on hardware), never track `main`.
+      revision: 19582174f3a446a07d40f479020b4ebb1aad8ddb
       import: app/west.yml
   self:
     path: config
