@@ -18,7 +18,9 @@
 #
 ---
 include:
-  - board: nice_nano
+  - board: nice_nano@2.0.0
     shield: cradio_left
-  - board: nice_nano
+    artifact-name: left
+  - board: nice_nano@2.0.0
     shield: cradio_right
+    artifact-name: right
